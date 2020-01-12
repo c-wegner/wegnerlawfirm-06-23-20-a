@@ -6,7 +6,8 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-typescript`],
-  plugins: [`gatsby-plugin-styled-components`],
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [`gatsby-plugin-typescript`,
+            `gatsby-plugin-styled-components`,
+            `gatsby-plugin-react-helmet`,
+            ]
 }
