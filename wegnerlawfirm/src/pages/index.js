@@ -1,8 +1,9 @@
 import React from "react";
 import GlobalStyle from '../globals/layouts/globalstyle';
-import { Master } from '../globals/layouts/master';
+import { Master, Testing } from '../globals/layouts/master';
+import Main from '../views/main';
+import '../libaries/all.js';
 
-import Spy from '../components/tools/spy'
 
 
 export default () => (
@@ -12,7 +13,7 @@ export default () => (
             Description='Wegner Law PLLC is the only law firm in Naples, Florida working exclusively with small to mid-sized businesses and entrepreneurs'
         >
             <GlobalStyle />
-
+        <Main />
         </Master>
     </React.Fragment>
 )
