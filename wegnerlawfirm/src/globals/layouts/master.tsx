@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import './master.css';
 
 interface IMaster{
     Title:string;
@@ -9,15 +8,23 @@ interface IMaster{
     children:any;
 }
 
+const OverflowWrapper= styled.div `
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+`
+
 export const Master:React.FC<IMaster>=({Title, Description, children})=>(
     <React.Fragment>
         <Metadata
             Title={Title}
             Description={Description}
         />
-        <div className="website-overflow-wrapper">
+        <OverflowWrapper>
             {children}
-        </div>
+        </OverflowWrapper>
     </React.Fragment>   
 )
 
