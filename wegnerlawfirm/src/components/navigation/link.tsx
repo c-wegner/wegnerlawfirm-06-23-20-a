@@ -31,6 +31,7 @@ const Styles={
         display: block;
         margin-top: 25px;
         margin-left: 20px;
+        cursor: pointer;
         
         @media(min-width: ${screenSize.md}){
             color: black;

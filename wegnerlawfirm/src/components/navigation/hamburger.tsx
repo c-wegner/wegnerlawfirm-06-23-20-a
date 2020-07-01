@@ -11,6 +11,7 @@ const Styles = {
     display: block;
     height: 35px;
     width: 35px;
+    cursor: pointer;
     
     @media(min-width: ${screenSize.md}){
         display: none;

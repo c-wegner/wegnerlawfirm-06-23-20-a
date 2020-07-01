@@ -26,9 +26,10 @@ const Styles = {
        display: flex;
        justify-content: flex-end;
        padding-right: 25px;
+
         @media(min-width: ${screenSize.md}){
 
-            display: hidden;
+            display: none;
         }
     `,
 
