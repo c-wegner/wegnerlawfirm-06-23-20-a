@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { screenSize } from '../_constants';
-import {Hamburger} from './hamburger';
+import { Hamburger } from './hamburger';
 
 interface IStylesMenu {
     height: string;
@@ -19,7 +19,7 @@ const Styles = {
         }
     `,
 
-    BurgerWrapper:styled.div `
+    BurgerWrapper: styled.div`
         height: 55px;
 
         width: 100%;
@@ -54,7 +54,7 @@ const Styles = {
 interface IMenu {
     expanded: boolean;
     children: any;
-    onBurgerClick:any;
+    onBurgerClick: any;
 }
 
 export const Menu: React.FC<IMenu> = ({
@@ -65,12 +65,12 @@ export const Menu: React.FC<IMenu> = ({
     return (
         <React.Fragment>
             <Styles.ResponsiveMenu>
- <Styles.BurgerWrapper>
+                <Styles.BurgerWrapper>
                     <Hamburger
-                    expanded={expanded}
-                    onClick={onBurgerClick}
-                />
- </Styles.BurgerWrapper>
+                        expanded={expanded}
+                        onClick={onBurgerClick}
+                    />
+                </Styles.BurgerWrapper>
                 <Styles.Menu height={(expanded) ? '100vh' : '0'}>
                     {children}
                 </Styles.Menu>
