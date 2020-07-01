@@ -11,6 +11,7 @@ const Styles = {
     ResponsiveMenu: styled.div`
         display: flex;
         flex-direction: column;
+        width:100%;
 
 
         @media(min-width: ${screenSize.md}){
@@ -20,8 +21,15 @@ const Styles = {
 
     BurgerWrapper:styled.div `
         height: 55px;
-        background-color: blue;
+
         width: 100%;
+       display: flex;
+       justify-content: flex-end;
+       padding-right: 25px;
+        @media(min-width: ${screenSize.md}){
+
+            display: hidden;
+        }
     `,
 
     Menu: styled.ul<IStylesMenu>`
@@ -32,10 +40,9 @@ const Styles = {
         overflow: hidden;
         width:100%;
 
-        background-color: red;
 
         @media(min-width: ${screenSize.md}){
-
+            justify-content: flex-end;
             flex-direction: row;
             margin: 10px;
             height: 45px;

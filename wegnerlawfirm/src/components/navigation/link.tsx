@@ -26,9 +26,11 @@ interface IStylesLink{
 const Styles={
     Link:styled.li<IStylesLink> `
         text-align:left;
-        font-size: 1.3rem;
+        font-size: 2rem;
         color: ${p=>p.color};
         display: block;
+        margin-top: 25px;
+        margin-left: 20px;
         
         @media(min-width: ${screenSize.md}){
             color: black;

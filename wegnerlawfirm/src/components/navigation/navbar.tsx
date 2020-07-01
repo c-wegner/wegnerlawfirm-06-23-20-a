@@ -7,19 +7,28 @@ import {MenuLink, Link} from './link';
 //@ts-ignore
 import Signature from '../../imgs/wegner-law-signature-logo.jpg';
 
-const Logo = styled.img `
+interface ILogo{
+    display: string;
+}
+
+const Logo = styled.img<ILogo> `
     margin: 5px;
     height: 55px;
     cursor: pointer;
+    display: ${p=>p.display};
 `;
 
 const Nav = styled.div `
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
+
+    @media(min-width: ${screenSize.md}){
+     justify-content: space-between;      
+    }
 
 `;
 
@@ -33,12 +42,13 @@ export const Navbar:React.FC<INavbar>=({currentId, onNavigation, options})=>{
     const [expandedMenu, setExpandedMenu] = useState(false);
 
     function handleClick(id:string){
+        setExpandedMenu(false);
         onNavigation(id);
     }
 
     return(
         <Nav>
-            <Logo src={Signature} alt='Wegner Law PLLC business law firm signature logo' onClick={()=>handleClick('home')} />
+            <Logo src={Signature} alt='Wegner Law PLLC business law firm signature logo' onClick={()=>handleClick('home')} display={(expandedMenu)? 'none':'block'} />
             <Menu expanded={expandedMenu} onBurgerClick={()=>setExpandedMenu(!expandedMenu)}>
                 {
                     options.map((x:Link, i)=>{
