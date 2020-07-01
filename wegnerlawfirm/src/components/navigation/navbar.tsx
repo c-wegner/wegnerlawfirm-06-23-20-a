@@ -19,6 +19,7 @@ const Nav = styled.div `
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: white;
 
 `;
 
@@ -29,7 +30,7 @@ interface INavbar{
 }
 
 export const Navbar:React.FC<INavbar>=({currentId, onNavigation, options})=>{
-    const [expandedMenu, setExpandedMenu] = useState(true);
+    const [expandedMenu, setExpandedMenu] = useState(false);
 
     function handleClick(id:string){
         onNavigation(id);
@@ -38,7 +39,7 @@ export const Navbar:React.FC<INavbar>=({currentId, onNavigation, options})=>{
     return(
         <Nav>
             <Logo src={Signature} alt='Wegner Law PLLC business law firm signature logo' onClick={()=>handleClick('home')} />
-            <Menu expanded={expandedMenu}>
+            <Menu expanded={expandedMenu} onBurgerClick={()=>setExpandedMenu(!expandedMenu)}>
                 {
                     options.map((x:Link, i)=>{
                         if(x.createMenuLink){
