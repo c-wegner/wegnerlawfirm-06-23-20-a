@@ -3,6 +3,7 @@ import { scroll } from '../components/tools/scroll';
 import { Navbar } from '../components/navigation/navbar';
 import { Link } from '../components/navigation/link';
 import {navigate} from 'gatsby';
+import {Background} from '../components/hero/background';
 
 
 const Main = () => {
@@ -37,6 +38,8 @@ const Main = () => {
                 currentId={currentId}
                 options={menuLinks}
             />
+
+            <Background />
             <div style={{ height: '120vh' }} >home</div>
 
             <div ref={getLinkRef(menuLinks, 'about')}></div>
