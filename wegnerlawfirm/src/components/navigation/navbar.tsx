@@ -16,13 +16,11 @@ const Logo = styled.img `
 const Nav = styled.div `
     display: flex;
     justify-content: space-between;
-      position: fixed;
-  top: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
 `;
-
-
 
 interface INavbar{
     currentId:string;
@@ -34,7 +32,6 @@ export const Navbar:React.FC<INavbar>=({currentId, onNavigation, options})=>{
     const [expandedMenu, setExpandedMenu] = useState(true);
 
     function handleClick(id:string){
-        console.log(id +'Navbar')
         onNavigation(id);
     }
 

@@ -6,12 +6,14 @@ export class Link{
     label:string;
     anchor:string;
     createMenuLink:boolean;
+    page:string;
     ref:any;
 
-    constructor(Label:string, Anchor:string, Ref:any, CreateLink=true){
+    constructor(Label:string, Anchor:string, Ref:any, CreateLink=true, Page=''){
         this.label  = Label;
         this.anchor = Anchor;
         this.createMenuLink = CreateLink;
+        this.page =Page;
         this.ref = Ref;
     }
 }
@@ -53,8 +55,8 @@ export const MenuLink:React.FC<IMenuLink>=({
     onClick
 })=>{
     useEffect(()=>{},[currentId]);
+
     function handleClick(){
-        console.log('link')
        onClick(id);
     }
     return(
