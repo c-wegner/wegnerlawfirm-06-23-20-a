@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {screenSize} from '../_constants';
 import {Menu} from './menu';
-import {MenuLink} from './link';
+import {MenuLink, Link} from './link';
 
 //@ts-ignore
 import Signature from '../../imgs/wegner-law-signature-logo.jpg';
@@ -27,9 +27,10 @@ const Nav = styled.div `
 interface INavbar{
     currentId:string;
     onNavigation: any;
+    options: Link[];
 }
 
-export const Navbar:React.FC<INavbar>=({currentId, onNavigation})=>{
+export const Navbar:React.FC<INavbar>=({currentId, onNavigation, options})=>{
     const [expandedMenu, setExpandedMenu] = useState(true);
 
     function handleClick(id:string){
@@ -41,12 +42,21 @@ export const Navbar:React.FC<INavbar>=({currentId, onNavigation})=>{
         <Nav>
             <Logo src={Signature} alt='Wegner Law PLLC business law firm signature logo' onClick={()=>handleClick('home')} />
             <Menu expanded={expandedMenu}>
-                <MenuLink
-                    label='About'
-                    id='about'
-                    currentId={currentId}
-                    onClick={()=>handleClick('about')}
-                />
+                {
+                    options.map((x:Link, i)=>{
+                        if(x.createMenuLink){
+                            return(
+                                <MenuLink
+                                    label={x.label}
+                                    id={x.anchor}
+                                    currentId={currentId}
+                                    onClick={()=>handleClick(x.anchor)}
+                                    key={x.anchor +'_' + i.toString()}
+                                />
+                            )
+                        }
+                    })
+                }
             </Menu>
         </Nav>
     )

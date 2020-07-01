@@ -5,11 +5,13 @@ import {screenSize} from '../_constants';
 export class Link{
     label:string;
     anchor:string;
+    createMenuLink:boolean;
     ref:any;
 
-    constructor(Label:string, Anchor:string, Ref:any){
+    constructor(Label:string, Anchor:string, Ref:any, CreateLink=true){
         this.label  = Label;
         this.anchor = Anchor;
+        this.createMenuLink = CreateLink;
         this.ref = Ref;
     }
 }

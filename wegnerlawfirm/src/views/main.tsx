@@ -6,11 +6,13 @@ import { Link } from '../components/navigation/link';
 
 const Main = () => {
     const [currentId, setCurrentId] = useState('hero');
-    const refHero = useRef(null);
 
     let testLinks: Link[] = [
-        new Link('Home', 'home', useRef(null)),
-        new Link('Garage', 'about', useRef(null))
+        new Link('Home', 'home', useRef(null), false),
+        new Link('About', 'about', useRef(null)),
+        new Link('Practices', 'practices', useRef(null)),
+        new Link('Industries', 'industries', useRef(null)),
+        new Link('Contact Us', 'contactUs', useRef(null)),
     ]
 
     function handleNavigation(id: string) {
@@ -21,20 +23,25 @@ const Main = () => {
 
     return (
         <div>
-
+            <div ref={getLinkRef(testLinks, 'home')}></div>
             <Navbar
                 onNavigation={handleNavigation}
                 currentId={currentId}
+                options={testLinks}
             />
-            <div style={{ height: '120vh' }} >{currentId}</div>
-            <div ref={getLinkRef(testLinks, 'home')}></div>
+            <div style={{ height: '120vh' }} >home</div>
 
-            <div style={{ height: '120vh' }} >{currentId}</div>            <div style={{ height: '120vh' }} >{currentId}</div>
-            <div style={{ height: '120vh' }} >{currentId}</div>
-            <div style={{ height: '120vh' }}>
-                <div style={{ height: '120vh', backgroundColor: '#222' }} ref={getLinkRef(testLinks, 'about')}></div>
+            <div ref={getLinkRef(testLinks, 'about')}></div>
+            <div style={{ height: '120vh' }} >about</div>
 
-            </div>
+            <div ref={getLinkRef(testLinks, 'practices')}></div>
+            <div style={{ height: '120vh' }} >Practies</div>
+
+            <div ref={getLinkRef(testLinks, 'industries')}></div>
+            <div style={{ height: '120vh' }} >Industry</div>
+
+            <div ref={getLinkRef(testLinks, 'contactUs')}></div>
+            <div style={{ height: '120vh' }} >contact</div>
         </div>
     )
 }
