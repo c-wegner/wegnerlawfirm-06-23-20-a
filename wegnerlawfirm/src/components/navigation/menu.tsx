@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { screenSize } from '../_constants';
 
-interface IStylesMenu{
+interface IStylesMenu {
     height: string;
 }
 
@@ -10,7 +10,7 @@ const Styles = {
     Menu: styled.ul<IStylesMenu>`
         display: flex;
         flex-direction: column;
-        height: ${p=>p.height};
+        height: ${p => p.height};
         transition: height .25s;
         overflow: hidden;
 
@@ -23,18 +23,21 @@ const Styles = {
     `,
 }
 
-interface IMenu{
-    expanded:boolean;
+interface IMenu {
+    expanded: boolean;
     children: any;
 }
 
-export const Menu:React.FC<IMenu>=({
+export const Menu: React.FC<IMenu> = ({
     expanded,
     children
-})=>{
-    return(
-        <Styles.Menu height={(expanded)? '100vh' : '0'}>
-            {children}
-        </Styles.Menu>
+}) => {
+    return (
+        <React.Fragment>
+
+            <Styles.Menu height={(expanded) ? '100vh' : '0'}>
+                {children}
+            </Styles.Menu>
+        </React.Fragment>
     )
 }
