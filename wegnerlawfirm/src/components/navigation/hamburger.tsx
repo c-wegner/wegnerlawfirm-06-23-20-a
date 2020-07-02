@@ -36,10 +36,11 @@ export const Hamburger: React.FC<IHamburger> = ({
     return (
         <Styles.Button onClick={onClick}>
             <Styles.Face display={(expanded) ? 'block' : 'none'}>
-                <i className='fal fa-bars'></i>
+                                <i className='fal fa-times'></i>
+ 
             </Styles.Face>
             <Styles.Face display={(expanded) ? 'none' : 'block'}>
-                <i className='fal fa-times'></i>
+               <i className='fal fa-bars'></i>
             </Styles.Face>
         </Styles.Button>
     )
