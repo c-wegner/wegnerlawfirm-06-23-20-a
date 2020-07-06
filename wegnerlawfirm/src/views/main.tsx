@@ -4,6 +4,7 @@ import { Navbar } from '../components/navigation/navbar';
 import { Link } from '../components/navigation/link';
 import {navigate} from 'gatsby';
 import {Background} from '../components/hero/background';
+import {Profile} from '../components/profile/_profile';
 
 
 const Main = () => {
@@ -42,8 +43,10 @@ const Main = () => {
             <Background />
             <div style={{ height: '120vh' }} >home</div>
 
-            <div ref={getLinkRef(menuLinks, 'about')}></div>
-            <div style={{ height: '120vh' }} >about</div>
+            <div ref={getLinkRef(menuLinks, 'about')}>
+                <Profile />
+            </div>
+
 
             <div ref={getLinkRef(menuLinks, 'practices')}></div>
             <div style={{ height: '120vh' }} >Practies</div>

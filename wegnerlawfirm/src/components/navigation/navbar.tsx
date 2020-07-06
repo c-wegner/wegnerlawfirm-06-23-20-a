@@ -18,13 +18,14 @@ const Logo = styled.img<ILogo> `
     display: ${p=>p.display};
 `;
 
-const Nav = styled.div `
+const Nav = styled.nav `
     display: flex;
     justify-content: flex-start;
     position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
+    z-index: 1;
 
     @media(min-width: ${screenSize.md}){
      justify-content: space-between;      
