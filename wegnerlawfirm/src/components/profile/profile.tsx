@@ -13,6 +13,7 @@ const Styles = {
         transition: transform 2s, opacity 3s;
         width: 100%;
         background-color: white;
+        padding: 10px;
     @media(min-width:${constants.screenSize.md}){
         position: relative;
         width: 450px;
@@ -20,7 +21,6 @@ const Styles = {
         margin-right: 300px;
         margin-top: -350px;
         border: 1px solid #222;
-        min-height: 550px;
     }
     `,
     

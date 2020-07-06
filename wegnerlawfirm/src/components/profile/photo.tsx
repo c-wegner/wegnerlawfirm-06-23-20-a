@@ -21,6 +21,7 @@ const Styles = {
         width: 450px;
         transform: translate(${p=>p.displaceX});
         margin-left:225px;
+        margin-bottom: 100px;
     }
     `,
 }

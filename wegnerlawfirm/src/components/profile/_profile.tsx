@@ -9,7 +9,7 @@ import { Bio } from './profile';
 const Styles = {
     Strip: styled.div`
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
 
         @media(min-width: ${constants.screenSize.md}){
             flex-direction: column;
